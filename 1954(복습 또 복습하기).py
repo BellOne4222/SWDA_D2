@@ -50,13 +50,14 @@ for test_case in range(1, T + 1):
         print(*lst)
 
 
+# 2번 코드(1번 코드 보완)
 def isValid(row, col):
     if (row >= 0 and row < n and col >= 0 and col < n): # row, col의 조건은 0보다 크고 N보다 작은 범위
         return True
     else:
         return False
 
-# 2번 코드(1번 코드 보완)
+
 T = int(input())
 # 여러개의 테스트 케이스가 주어지므로, 각각을 처리합니다.
 for test_case in range(1, T + 1):

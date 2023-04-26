@@ -27,7 +27,8 @@ def checkSudoku(M):
                 for r in range(i, i+3):
                     for c in range(j, j+3):
                         num = M[r][c]
-                        if square[num]: return 0
+                        if square[num]:
+                            return 0
                         square[num] = 1
     
     # 반복문이 정상적으로 다 수행된다면, 올바른 스도쿠이므로 1을 리턴
