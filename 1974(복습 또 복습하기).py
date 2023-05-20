@@ -121,3 +121,29 @@ if hori() and verti() and bythree():
     print(1)
 else:
     print(0)
+
+
+T = int(input())
+# 여러개의 테스트 케이스가 주어지므로, 각각을 처리합니다.
+for t in range(1, T + 1):
+    M=[[*map(int,input().split())]for _ in range(9)]
+    c=1
+    for i in range(9):
+        if len(set(M[i]))<9:c=0
+    M=[*zip(*M)]
+    for j in range(9):
+        if len(set(M[j]))<9:c=0
+    for i in range(0,7,3):
+        for j in range(0,7,3):
+            if len(set(M[k][l]for k in range(i,i+3)for l in range(j,j+3)))<9:c=0
+    print(f'#{t}',c)
+
+# zip
+# numbers = [1, 2, 3]
+# >>> letters = ["A", "B", "C"]
+# >>> for pair in zip(numbers, letters):
+# ...     print(pair)
+# ...
+# (1, 'A')
+# (2, 'B')
+# (3, 'C')
