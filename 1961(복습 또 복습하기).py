@@ -48,3 +48,37 @@ for tc in range(1, T+1):
 # 또한, 원본 행렬을 각각 90도 180도 270도 돌리려고 하면 인덱스를 계산하는 것에 있어서 어려움을 겪을 수 있다. 따라서 원본 행렬의 90도 회전 행렬을 구하고 → 90도 회전한 행렬의 90도 회전 행렬을 구하고 → 다시 그 행렬의 90도 회전 행렬을 구하면 각각 90도 회전 / 180도 회전 / 270도 회전 행렬을 찾을 수 있다.
 # 오히려 회전한 행렬을 구하는 부분보다, 마지막에 출력 예시에 맞게끔 코드를 짜는 부분이 더 어려웠다. 한 행 안에서 각 행렬의 0~N 열을 띄어쓰기 없이 / 행렬 사이에는 공백을 주고 출력해야 한다.
 # 글로 풀어서 쓰는데도 무슨 말인지 모르겠다. 위 코드를 천천히 살펴보면 이해할 수 있을 것이다.
+
+T = int(input())
+for tc in range(1,T+1):
+    N = int(input())
+    lst = [ list(input().split()) for _ in range(N)]
+    # print(f"lst : ",lst)
+    # print(f"N : ",N)
+    arr = [ [0]*3 for _ in range(N)]
+    # print(arr)
+    # print(arr)
+    for j in range(N):
+        str=""
+        for si in range(N):
+            str+=lst[N-1-si][j]
+        arr[j][0]  = str
+ 
+    for i in range(N):
+        str=""
+        for sj in range(N):
+            str+= lst[N-1-i][N-1-sj]
+        arr[i][1] = str
+ 
+    for j in range(N):
+        str = ""
+        for si in range(N):
+            str += lst[si][N-1-j]
+        arr[j][2] = str
+ 
+    print(f"#{tc}")
+ 
+    for i in range(N):
+        for j in range(3):
+            print(arr[i][j], end= " ")
+        print()
